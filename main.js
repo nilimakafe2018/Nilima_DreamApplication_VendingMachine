@@ -6,11 +6,11 @@ This application allows the user to select a soda by entering its code.
 Pseudocode:
 Import the readline module to read user input
 Create the input and output interface using readline
-Define an array of soda objects with three dogit code, name, and price
+Define an array of soda objects with three dogit code, name, and prices
 Print welcome message and the soda options
 Loop through the soda objects to print each soda's code, name, and price
-Ask the user to input three digit code for the soda they want
-When user inputs a code: If code matches, print selected soda name and price
+Ask the user to input three digit code for the soda that they want
+When user inputs a code: If code matches, print selected soda name and its price
 and If not, display "Invalid code"
 Close the input interface
 */
@@ -25,7 +25,7 @@ const rl = readline.createInterface({
 });
 
 //Values, Data Types, and Operations:
-//define strings for codes and names, numbers for prices, and use assignment (=) to store them.
+//define strings for codes and names, numbers for prices, using assignment (=) to store them.
 
 const sodas = [
   { code: '021', name: 'Coke Regular', price: 1.25 },
@@ -54,21 +54,21 @@ for (let i = 0; i < sodas.length; i++) {
 //Use if and else statements to handle user input and check for valid codes.
 
 //Prompting the user to enter the 3-digit code
-rl.question('Please enter the 3-digit code of the soda you want to buy: ', function (inputCode) {
+rl.question('Please enter the 3-digit code of the soda that you want to buy: ', function (inputCode) {
   let found = false;
 
-  //Using Arrays + Using Objects
+  //Using Arrays and Using Objects
   //Looping through the array of objects and check if the input matches the code property of any soda.
   for (let i = 0; i < sodas.length; i++) {
     if (inputCode === sodas[i].code) {
-      console.log('You selected: ' + sodas[i].name);
+      console.log('You select: ' + sodas[i].name);
       console.log('Price: $' + sodas[i].price.toFixed(2));
       found = true;
       break;
     }
   }
   
-//If the user entered an invalid code
+//Printing message if the user entered an invalid code
   if (!found) {
     console.log('Invalid code. Please try again.');
   }
